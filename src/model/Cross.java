@@ -11,5 +11,10 @@ public class Cross extends Mark {
 		// TODO Auto-generated method stub
 		return false;
 	}
+	
+	@Override
+	public void printString() {
+		System.out.printf("X");
+	}
 
 }

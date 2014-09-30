@@ -8,4 +8,5 @@ public abstract class Mark {
 
 	public abstract boolean isUnmarked();
 
+	public abstract void printString();
 }

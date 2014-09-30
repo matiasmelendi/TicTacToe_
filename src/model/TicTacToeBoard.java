@@ -71,7 +71,7 @@ public class TicTacToeBoard {
 	
 	private boolean isPossibleSmartMoveFor(List<Cell> row,ComputerPlayer computer) {
 		return row.stream().anyMatch(cell-> cell.mark() == computer.mark()) && 
-				row.stream().filter(cell-> cell.isEmpty()).count() > 1;
+				row.stream().filter(cell-> cell.isEmpty()).count() >= 1;
 	}
 
 	private void generateCells(){
@@ -105,6 +105,15 @@ public class TicTacToeBoard {
 	public void changeState(BoardState state){
 		this.state=state;
 	}
+	
+	public void printString(){
+		rows().forEach(row -> printRow(row));
+	}
+	
+	private void printRow(List<Cell> row){
+		row.forEach(cell -> cell.printString());System.out.println("");
+	}
+
 	
 
 }

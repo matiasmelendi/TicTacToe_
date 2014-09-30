@@ -10,4 +10,9 @@ public class Knot extends Mark {
 		return false;
 	}
 
+	@Override
+	public void printString() {
+		System.out.printf("O");
+	}
+
 }

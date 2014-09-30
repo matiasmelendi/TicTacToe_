@@ -27,5 +27,10 @@ public class Cell {
 	public boolean inTheSamePosition(Point position2) {
 		return position().equals(position2);
 	}
+	
+	public void printString(){
+		System.out.printf("|");mark.printString();System.out.printf("|");
+		
+	}
 
 }

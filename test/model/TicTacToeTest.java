@@ -92,13 +92,14 @@ public class TicTacToeTest {
 		computer.play(ticTacToe);
 		computer.play(ticTacToe);
 		computer.play(ticTacToe);
+		printBoard(ticTacToe.board());
 		
 		assertTrue(ticTacToe.theWinnerIs(computer));
 	}
 	
-	private void printBoard(TicTacToeBoard board){
+	protected void printBoard(TicTacToeBoard board){
 	
-		board.cells().forEach(cell -> System.out.println(cell.position().toString() + cell.mark().toString()));
+		board.printString();
 	}
 	
 	@Test

@@ -9,5 +9,9 @@ public class Unmarked extends Mark {
 	public boolean isUnmarked() {
 		return true;
 	}
-
+	
+	@Override
+	public void printString() {
+		System.out.printf(".");
+	}
 }
