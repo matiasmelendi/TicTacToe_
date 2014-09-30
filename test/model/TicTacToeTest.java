@@ -90,8 +90,15 @@ public class TicTacToeTest {
 		player1.play(ticTacToe, new Point(0,0));
 		player1.play(ticTacToe, new Point(1,0));
 		computer.play(ticTacToe);
+		computer.play(ticTacToe);
+		computer.play(ticTacToe);
 		
-		assertTrue(ticTacToe.boardState().isWithoutPosibleWinningGameState());
+		assertTrue(ticTacToe.theWinnerIs(computer));
+	}
+	
+	private void printBoard(TicTacToeBoard board){
+	
+		board.cells().forEach(cell -> System.out.println(cell.position().toString() + cell.mark().toString()));
 	}
 	
 	@Test

@@ -2,10 +2,10 @@ package model;
 
 import java.awt.Point;
 
-public class MarkThePossibleWinningCell extends PossibleMove {
+public class MarkThePossibleWinningCell extends PossibleSmartMoveForComputer {
 
 	@Override
-	public Point play(TicTacToe game) {
+	public Point nextMoveFor(TicTacToe game,ComputerPlayer computer) {
 		return game.nextPositionForPlay();
 	}
 

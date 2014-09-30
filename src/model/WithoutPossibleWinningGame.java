@@ -1,5 +1,7 @@
 package model;
 
+import java.awt.Point;
+
 
 public class WithoutPossibleWinningGame extends BoardState {
 
@@ -10,6 +12,11 @@ public class WithoutPossibleWinningGame extends BoardState {
 
 	public boolean isWithoutPosibleWinningGameState(){
 		return true;
+	}
+
+	@Override
+	public Point smartMoveForComputer(TicTacToe game, ComputerPlayer computer) {
+		return new SearchAndMarkACellNextToAnotherWithTheSameMark().nextMoveFor(game,computer);
 	}
 
 }

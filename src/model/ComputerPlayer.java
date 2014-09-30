@@ -15,7 +15,7 @@ public class ComputerPlayer extends Player {
 	}
 	
 	public Point nextPosition(TicTacToe game){
-		return BoardStateProvider.nextPositionFor(game);
+		return BoardStateProvider.nextSmartPositionForComputer(game,this);
 	}
 	
 }

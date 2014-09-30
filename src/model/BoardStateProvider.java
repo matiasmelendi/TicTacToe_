@@ -25,8 +25,8 @@ final public class BoardStateProvider {
 		return celdasNoVacias.size() == 2 &&  marks.keySet().size() == 1;
 	}
 
-	public static Point nextPositionFor(TicTacToe game) {
-		return game.boardState().possiblePlay(game);
+	public static Point nextSmartPositionForComputer(TicTacToe game,ComputerPlayer computer) {
+		return game.boardState().smartMoveForComputer(game,computer);
 	}
 	
 }

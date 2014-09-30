@@ -59,6 +59,21 @@ public class TicTacToeBoard {
 		return rows;
 	}
 	
+	public Point smartMoveForComputer(ComputerPlayer computer){
+		return possibleSmartMovesFor(computer).stream().findAny()
+				.get().stream().filter(cell->cell.isEmpty()).findAny().get().position();
+	}
+	
+	private List<List<Cell>> possibleSmartMovesFor(ComputerPlayer computer){
+		return possibleRows().stream().filter(row -> isPossibleSmartMoveFor(row,computer)).
+				collect(Collectors.toList());
+	}
+	
+	private boolean isPossibleSmartMoveFor(List<Cell> row,ComputerPlayer computer) {
+		return row.stream().anyMatch(cell-> cell.mark() == computer.mark()) && 
+				row.stream().filter(cell-> cell.isEmpty()).count() > 1;
+	}
+
 	private void generateCells(){
 		for(int x=0;x < 3;x++)
 			generateRow(x);

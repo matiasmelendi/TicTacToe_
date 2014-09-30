@@ -9,8 +9,10 @@ public abstract class BoardState {
 
 	public abstract boolean isEmpty() ;
 	
-	public Point possiblePlay(TicTacToe game) {
-		return new AnyMovementInTheBoard().play(game);
+	abstract public Point smartMoveForComputer(TicTacToe game,ComputerPlayer computer);
+	
+	public Point possiblePlay(TicTacToe game,ComputerPlayer computer) {
+		return new AnyMovementInTheBoard().nextMoveFor(game,computer);
 	}
 
 	public boolean isWithPosibleWinningGameState() {

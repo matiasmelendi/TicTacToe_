@@ -48,8 +48,9 @@ public class TicTacToe {
 	}
 
 	public Point nextPositionForPlay() {
-		return possibleWinningRowsForPlayAndNoLose().get(0)
-				.stream().filter(cell-> cell.isEmpty()).findAny().get().position();
+		return possibleWinningRowsForPlayAndNoLose()
+				.stream().filter(row -> row.stream().anyMatch(cell->cell.isEmpty())).findAny().get()
+				.stream().filter(cell -> cell.isEmpty()).findAny().get().position();
 	}
 
 	private List<List<Cell>> possibleWinningRowsForPlayAndNoLose(){
@@ -60,6 +61,15 @@ public class TicTacToe {
 		Map<Mark, List<Cell>> marks=row.stream().collect(Collectors.groupingBy(cell->cell.mark()));
 		marks.remove(new Unmarked());		
 		return marks.values().stream().anyMatch(cells -> cells.size()== 2);
+	}
+	
+	public Point smartMoveForComputer(ComputerPlayer computer){
+		return board.smartMoveForComputer(computer);
+	}
+
+	public TicTacToeBoard board() {
+		// TODO Auto-generated method stub
+		return board;
 	}
 	
 
